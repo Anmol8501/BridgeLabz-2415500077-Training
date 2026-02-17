@@ -1,0 +1,38 @@
+Word Search (Backtracking)
+
+'''Grid:
+C A T S
+O R E A
+D E A M
+E L L S
+
+Word: DREAM
+
+a) Pseudocode-
+    f(i, j, k):
+    if k == len(word): return true
+    if out of grid or visited or grid[i][j] != word[k]: return false
+    mark visited
+    if f(i+1,j,k+1) or f(i-1,j,k+1) or f(i,j+1,k+1) or f(i,j-1,k+1):
+        return true
+    unmark visited
+    return false
+
+b) Decision Path-
+    D -> R -> E -> A -> M
+    (2,0) -> (1,1) -> (2,1) -> (2,2) -> (2,3)
+
+c) Trace-
+    Pick D
+    Move to R
+    Move to E
+    Move to A
+    Move to M
+    Word found
+
+d) Time Complexity-
+    O(N*M*4^L)
+
+e) Find All Ways-
+    Store paths in list
+    Do not stop after first true'''

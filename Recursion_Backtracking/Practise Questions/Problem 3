@@ -1,0 +1,30 @@
+N Queens-
+
+a) Search Space-
+    Brute force: 8^8
+    One per row: 8!
+    Backtracking: much less due to pruning
+
+b) Optimized Pseudocode-
+    b[row] = col
+    ok(r, c):
+    for i from 0 to r-1:
+        if b[i] == c or abs(i-r) == abs(b[i]-c):
+            return false
+    return true
+
+c) Trace for N = 4 (short)-
+    Row 0 -> Col 1
+    Row 1 -> Col 3
+    Row 2 -> Col 0
+    Row 3 -> Col 2
+    Solution found
+
+d) Find Only One Solution-
+    Return true when solution found
+    Stop further calls
+
+e) Forbidden Squares-
+    Before placing queen:
+    if cell is forbidden: skip
+    Time reduces as choices reduce
