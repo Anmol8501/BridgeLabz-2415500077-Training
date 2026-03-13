@@ -1,0 +1,39 @@
+Directory Size (Recursion)
+
+'''a) Pseudocode-
+    f(x):
+    if x is file:
+        return size of x
+    sum = 0
+    for each y in x:
+        sum = sum + f(y)
+    return sum
+
+b) Trace-
+    f(project)
+     = f(src) + f(docs) + f(config.xml)
+
+    f(src)
+     = f(main.java) + f(utils.java)
+     = 100 + 50 = 150
+
+    f(docs)
+     = f(readme.txt) + f(guides)
+     = 10 + f(setup.pdf)
+     = 10 + 200 = 210
+
+    f(config.xml) = 20
+
+    Total = 150 + 210 + 20 = 380 KB
+    
+c) Time Complexity-
+    O(n)
+
+d) Iterative-
+    Use stack or queue
+    Push root folder
+    Pop one by one and add file sizes
+    
+e) Cycle Case-
+    Keep visited set
+    If folder already visited, return 0'''
